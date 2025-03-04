@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buon 8 marzo!</title>
+    <style>
+        /* Stile generale */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffccd5; /* Sfondo rosa */
+            margin: 0;
+            padding: 20px; /* Aggiunto padding per evitare che il contenuto sia troppo attaccato ai bordi */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: #000000; /* Nero */
+            font-size: 2em; /* Ridotto per mobile */
+            margin-bottom: 40px; /* Aumentato il margine sotto il titolo */
+        }
+        #mimosa {
+            width: 60%; /* Immagine più piccola e proporzionale */
+            max-width: 250px; /* Dimensione massima per desktop */
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin-bottom: 20px;
+        }
+        #mimosa:hover {
+            transform: scale(1.1);
+        }
+        #message {
+            display: none;
+            margin-top: 10px;
+            font-size: 1.5em; /* Ridotto per mobile */
+            color: #000000; /* Nero */
+            font-style: italic;
+        }
+        #sottotitolo {
+            display: none;
+            margin-top: 5px; /* Ridotto lo spazio sopra il sottotitolo */
+            font-size: 1em; /* Ridotto per mobile */
+            color: #000000; /* Nero */
+            font-style: italic;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1em; /* Ridotto per mobile */
+            background-color: #e60073; /* Rosa scuro */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #ff1493; /* Rosa più chiaro al passaggio del mouse */
+            transform: scale(1.05); /* Leggera animazione */
+        }
+        #testo-nera {
+            margin-bottom: 20px;
+            font-size: 1em; /* Ridotto per mobile */
+            color: #000000; /* Nero */
+        }
+
+        /* Ottimizzazione per mobile */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em; /* Titolo più piccolo su mobile */
+            }
+            #mimosa {
+                width: 80%; /* Immagine più grande su mobile */
+            }
+            #message, #sottotitolo {
+                font-size: 1.2em; /* Testo più piccolo su mobile */
+            }
+            button {
+                font-size: 0.9em; /* Pulsante più piccolo su mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>buon 8 marzo, bimba mia!</h1>
+    <p id="testo-nera">clicca sulla mimosa per scoprire un messaggio speciale...</p>
+    <img id="mimosa" src="mimosa.png" alt="Mimosa">
+    <p id="message">ti amo tanto, lilla! 💗</p>
+    <p id="sottotitolo">dal tuo mauretto</p> <!-- Nuova scritta -->
+    <button id="pulsante" onclick="mostraMessaggio()">clicca qui!</button>
+
+    <script>
+        function mostraMessaggio() {
+            // Mostra il messaggio
+            document.getElementById('message').style.display = 'block';
+            // Mostra la nuova scritta
+            document.getElementById('sottotitolo').style.display = 'block';
+            // Nascondi il pulsante
+            document.getElementById('pulsante').style.display = 'none';
+            // Nascondi la scritta nera
+            document.getElementById('testo-nera').style.display = 'none';
+            // Animazione della mimosa (opzionale)
+            document.getElementById('mimosa').style.transform = 'scale(1.2)';
+        }
+    </script>
+</body>
+</html>
